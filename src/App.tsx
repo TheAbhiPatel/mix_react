@@ -6,6 +6,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Contact from "./pages/Contact";
 import More from "./pages/More";
 import Product from "./pages/Product";
+import FileManager from "./pages/FileManager";
 
 function App() {
   return (
@@ -16,7 +17,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/more" element={<More />} />
+          <Route path="/more" element={<More />}>
+            <Route path="file-manager" element={<FileManager />} />
+            <Route path="todo" />
+            <Route path="progress-bar" />
+          </Route>
           <Route path="/product/:id" element={<Product />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
