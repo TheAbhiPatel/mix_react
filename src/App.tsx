@@ -3,18 +3,24 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import PageNotFound from "./pages/PageNotFound";
+import Contact from "./pages/Contact";
+import More from "./pages/More";
+import Product from "./pages/Product";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<About />} />
-        <Route path="/more" element={<About />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      <div className="bg-[#111] text-white min-h-[100vh] ">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/more" element={<More />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
